@@ -1,19 +1,32 @@
-%%This is a very basic article template.
-%%There is just one section and two subsections.
-\documentclass{article}
+\documentclass[fontsize=11, titlepage=true, parskip=half]{scrartcl}
+\input{Preamble/preamble}
+
+
+% \includeonly{
+% Titelblatt2,
+% Abstract,
+% Einleitung,
+% Problembeschreibung,
+% Grundlagen,
+% Analyse_des_Problems,
+% Lösung,
+% Zusammenfassung_und_Diskussion,
+% Fazit_und_Ausblick,
+% }
 
 \begin{document}
+\pagenumbering{roman}
 
 
-\section{Title}
-Schoenes Projekt
-\subsection{Subtitle}
+\tableofcontents
 
-Plain text.
+\cleardoubleoddpage
+\pagenumbering{arabic}
+%\KOMAoption{parskip}{half}
 
-\subsection{Another subtitle}
+%\include{Einleitung/Einleitung}
+\appendix
 
-More plain text.
-
-
+\bibliographystyle{Literatur/Rhein_Waal}
+\bibliography{Literatur/Literatur}
 \end{document}

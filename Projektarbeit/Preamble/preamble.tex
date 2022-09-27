@@ -1,0 +1,73 @@
+\usepackage{geometry}			%Papierformat und Rand
+\geometry{a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{pdflscape}			%landscape Umgebung für Querformatanzeige
+\usepackage{siunitx}			%schöne SI Einheiten
+\usepackage{graphicx}
+%\usepackage{abstract}			%??
+%\usepackage{microtype}		%saubere Umbrüche bei mehrspaltigen Docs
+\usepackage{booktabs}			%??
+\usepackage[hyphens]{url}
+\usepackage{eurosym}			%schönes Euro Symbol
+%\usepackage{dblfloatfix}		%float bottom twocolumn
+\usepackage[hidelinks]{hyperref}	% Paket: ltxcmds kann Links stylen
+\usepackage[automark]{scrlayer-scrpage} 	%Kopf und Fußzeile bearbeiten Paket: koma-script
+\chead*{\pagemark} %Seitenzahl mittig in Kopfzeile
+\cfoot[]{} %Voreinstellung für Seitenzahl löschen
+\usepackage{color}				%eigene Farben definieren (für Code-Highlighting)
+\usepackage[comma]{natbib}
+\usepackage[onehalfspacing]{setspace}
+\newcommand{\csharp}{{\settoheight{\dimen0}{C}C\kern-.05em \resizebox{!}{\dimen0}{\raisebox{\depth}{\#}}}} %schönes C#
+
+%Farben für C#
+\definecolor{bluekeywords}{rgb}{0,0,1}
+\definecolor{greencomments}{rgb}{0,0.5,0}
+\definecolor{redstrings}{rgb}{0.64,0.08,0.08}
+\definecolor{xmlcomments}{rgb}{0.5,0.5,0.5}
+\definecolor{types}{rgb}{0.17,0.57,0.68}
+
+%Farben für HTML
+
+
+%Listings für Code
+\usepackage{listings}
+\lstset{frame=lines, % Oberhalb und unterhalb des Listings ist eine Linie
+showstringspaces=false,
+basicstyle=\ttfamily\small,
+showspaces=false,
+showtabs=false,
+breaklines=true,
+breakatwhitespace=true,
+escapeinside={(*@}{@*)},
+}
+
+\lstdefinestyle{CSharp}{language=[Sharp]C,
+captionpos=b,
+%numbers=left, %Nummerierung
+%numberstyle=\tiny, % kleine Zeilennummern
+commentstyle=\color{greencomments},
+morekeywords={partial, var, value, get, set},
+keywordstyle=\color{bluekeywords},
+stringstyle=\color{redstrings},
+}
+
+\lstdefinestyle{HTML}{language=HTML,
+% sensitive=true,
+% classoffset=0,	
+% stringstyle=[0]\color{bluekeywords},
+% keywordstyle=[0]\color{redstrings},
+% classoffset=1,
+% morekeywords={
+% %Angular
+% [(ngModel)], (change), *ngIf,
+% },
+% keywordstyle=[1]\color{red},
+}
+
+\AfterTOCHead{
+\singlespacing
+\thispagestyle{empty}
+}
