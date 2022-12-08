@@ -385,7 +385,7 @@ FUNCTION {format.url}
 FUNCTION {write.urldate}
 { urldate empty$
     { skip$ }
-    { ", Abgerufen am: " urldate add.Period$  * write$ }
+    { ", Abgerufen am: " urldate  * write$ }
   if$
 }
 
@@ -913,7 +913,7 @@ FUNCTION {article}
 { output.bibitem
   format.authors "author" output.check
   author format.key output
-  format.date
+  format.date "year" output.check
   date.block
   format.title "title" output.check
   crossref missing$
@@ -1201,8 +1201,10 @@ FUNCTION {WWW}
   date.block
   format.title "title" output.check
   fin2.entry
-  format.url
+  "\newblock"
+  format.url output
   write.urldate
+  fin.entry
 }
 
 FUNCTION {default.type} { misc }
