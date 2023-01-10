@@ -13,6 +13,7 @@ Dazu werden zunächst die grundsätzlichen Methoden zur Detektion von Audio Deep
 Anschließend werden diese hinsichtlich der Voraussetzungen und Anforderungen an benötigte Ressourcen sowie die Audioquelle selbst analysiert.
 Dabei stellt sich stets die Frage, ob die Technologie bereits jetzt oder eventuell in naher Zukunft prinzipiell einen Telefonbetrug schnell genug aufdecken kann, um diesen verhindern zu können.
 
+\subsubsection{Erzeugung von Audio Deepfakes}
 \textbf{Text-to-speech TTS} \citep[][]{Masood2022}
 \begin{itemize}
   \item deep neural network
@@ -21,9 +22,32 @@ Dabei stellt sich stets die Frage, ob die Technologie bereits jetzt oder eventue
   \item Spezialfall: Voice Cloning, in Echtzeit, basierend auf Sprachbeispielen
   \item $\rightarrow$ online Platformen mit öffentlicher Verfügbarkeit (Overdub, VoiceApp, iSpeech)
   \item Sprachcharakteristika schlecht abgebildet (Emotionen, Ausdruck, Stress, Atmung, Akzent)
+  \item prinzipiell auch vom Menschen \glqq{}leichter\grqq{} zu erkennen, falls Bewusstsein vorhanden?
 \end{itemize}
 
-\textbf{Voice Conversion}
+\textbf{Voice Conversion (VC)}
 \begin{itemize}
-  \item 
+  \item benötigt sehr viel sample data
+  \item neurale vocoder vielversprechend
+  \item Versuche mit wenig Daten zum anlernen bisher nicht erfolgreich
+\end{itemize}
+
+\subsubsection{Audio Deepfake Detection}
+\textbf{Generell}
+\begin{itemize}
+  \item speziell auf die Art der Erzeugung abgestimmte Algorithmen
+  \item müssen auf (großen) Datenmengen angelernt werden
+  \item hand-crafted features: Auswahl der abzugleichenden/kritischen Eigenschaften (Waveform) durch Data Scientist
+  \item deep-features: Auswahl der Features durch Algorithmus, sehr spezifisch für eine Aufgabe (auf einen Algorithmus zugeschnitten, entweder schlechte Erkennung von anderen oder sehr hoher Rechenaufwand)
+  \item Störgeräusche sind fast immer ein Problem
+  \item TTS kann deutlich besser (sicherer) erkannt werden als VC
+\end{itemize}
+
+\textbf{Fast Detection}
+\begin{itemize}
+  \item ganz aktueller, interessanter Ansatz \citep[][]{Kawa2022}
+  \item bewusst auf state-of-the-art Genauigkeit verzichten
+  \item dadurch Rechenleistung einsparen $\rightarrow$ Detection quasi auf jedem Gerät möglich
+  \item Annahme: nicht jeder Fake ist super durchorganisiert mit modernstem Equipment (wie bereits gezeigt kann jeder mit seinem Handy etc. einen ordentlichen Fake herstellen) $\rightarrow$ automatisierte Detektion, auch große batch size möglich
+  \item $\rightarrow$ parallele zu Malware: sehr gute richtet Schaden an und ist schwer zu detektieren, aber der größte Teil kann durch \glqq{}einfache\grqq{} Vorsichtsmaßnahmen bzw. Software verhindert werden
 \end{itemize}
