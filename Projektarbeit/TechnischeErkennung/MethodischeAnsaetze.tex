@@ -9,7 +9,7 @@ Außerdem fällt auf, dass viele unterschiedliche Ansätze von verschiedenen For
 Hier scheint sich eine Community zu finden, die sich einen ersten Überblick über die unterschiedlichen Ausprägungen ihrer Forschung verschaffen will.
 
 Diesen Überblick wollen wir nutzen, um zu untersuchen inwieweit die aktuell erforschten Detektionsalgorithmen bei der zeitkritischen Bekämpfung von Audio Deepfakes unterstützen können.
-Dazu werden zunächst die grundsätzlichen Methoden zur Detektion von Audio Deepfakes vorgestellt.
+Dazu werden zunächst die grundsätzlichen Methoden zur Erzeugung und Detektion von Audio Deepfakes vorgestellt.
 Anschließend werden diese hinsichtlich der Voraussetzungen und Anforderungen an benötigte Ressourcen sowie die Audioquelle selbst analysiert.
 Dabei stellt sich stets die Frage, ob die Technologie bereits jetzt oder eventuell in naher Zukunft prinzipiell einen Telefonbetrug schnell genug aufdecken kann, um diesen verhindern zu können.
 
@@ -36,18 +36,10 @@ Dabei stellt sich stets die Frage, ob die Technologie bereits jetzt oder eventue
 \textbf{Generell}
 \begin{itemize}
   \item speziell auf die Art der Erzeugung abgestimmte Algorithmen
-  \item müssen auf (großen) Datenmengen angelernt werden
+  \item müssen auf (großen) Datenmengen angelernt werden (viele und oder lange Sequenzen)
   \item hand-crafted features: Auswahl der abzugleichenden/kritischen Eigenschaften (Waveform) durch Data Scientist
   \item deep-features: Auswahl der Features durch Algorithmus, sehr spezifisch für eine Aufgabe (auf einen Algorithmus zugeschnitten, entweder schlechte Erkennung von anderen oder sehr hoher Rechenaufwand)
   \item Störgeräusche sind fast immer ein Problem
   \item TTS kann deutlich besser (sicherer) erkannt werden als VC
 \end{itemize}
 
-\textbf{Fast Detection}
-\begin{itemize}
-  \item ganz aktueller, interessanter Ansatz \citep[][]{Kawa2022}
-  \item bewusst auf state-of-the-art Genauigkeit verzichten
-  \item dadurch Rechenleistung einsparen $\rightarrow$ Detection quasi auf jedem Gerät möglich
-  \item Annahme: nicht jeder Fake ist super durchorganisiert mit modernstem Equipment (wie bereits gezeigt kann jeder mit seinem Handy etc. einen ordentlichen Fake herstellen) $\rightarrow$ automatisierte Detektion, auch große batch size möglich
-  \item $\rightarrow$ parallele zu Malware: sehr gute richtet Schaden an und ist schwer zu detektieren, aber der größte Teil kann durch \glqq{}einfache\grqq{} Vorsichtsmaßnahmen bzw. Software verhindert werden
-\end{itemize}
