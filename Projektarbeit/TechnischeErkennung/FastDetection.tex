@@ -1,11 +1,13 @@
-%\subsection{Effektivität und Effizienz}
-% Fokus auf Echtzeitproblematik: Was ist technisch möglich oder eben nicht?
-% Hier erstes kleines Fazit ziehen?
 \subsection{Fast Detection}
-\begin{itemize}
-  \item ganz aktueller, interessanter Ansatz \citep[][]{Kawa2022}
-  \item bewusst auf state-of-the-art Genauigkeit verzichten
-  \item dadurch Rechenleistung einsparen $\rightarrow$ Detection quasi auf jedem Gerät möglich
-  \item Annahme: nicht jeder Fake ist super durchorganisiert mit modernstem Equipment (wie bereits gezeigt kann jeder mit seinem Handy etc. einen ordentlichen Fake herstellen) $\rightarrow$ automatisierte Detektion, auch große batch size möglich
-  \item $\rightarrow$ parallele zu Malware: sehr gute richtet Schaden an und ist schwer zu detektieren, aber der größte Teil kann durch \glqq{}einfache\grqq{} Vorsichtsmaßnahmen bzw. Software verhindert werden
-\end{itemize}
+Für die (nahezu) Echtzeitermittlung von AD ist nur ein Verfahren sinnvoll, dass innerhalb einer sehr kurzen Zeitspanne, beispielsweise eines Telefonats, nicht nur das Signal auf signifikante Features untersucht sondern auch ein (vorläufiges) Ergebnis liefert.
+Idealerweise sollte die Analyse mit geringen technischen Mitteln möglich sein, um direkt auf dem verwendeten Endgerät durchgeführt werden zu können.
+
+Einen ganz aktuellen Detektionsalgorithmus der genau auf diese Ziele ausgerichtet ist haben Kawa et al. vorgeschlagen \citep[][]{Kawa2022}.
+Dabei nehmen die Autoren an, dass die meistens Fakes nicht mit modernstem Equipment erzeugt werden, sondern mit frei zugängigen Webanwendungen oder mobilen Apps.
+Sie haben eine neue neuronale Netzwerkarchitektur entwickelt (SpecRNet), wobei der Fokus klar auf der Einsparung von Rechenleistung liegt, um eine schnelle Detektion zu ermöglichen.
+Gleichzeitig wird so je nach Anwendungsgebiet zwar auf die state-of-the-art Genauigkeit bei der Detektion verzichtet, aber gerade bei weniger aufwendig produzierten Audiofakes ist das auch nicht erforderlich.
+So konnten sie zeigen, dass mit einer durchschnittlichen CPU eine zweiminütige Audiodatei in weniger als einer Sekunde (\SI{706}{\milli\second}) analysiert werden kann.
+Dies verringert sich bei der Verwendung einer leistungsstarken GPU sogar noch auf \SI{13}{\milli\second} sodass mithilfe dieses Modells beispielsweise automatisiert Audiodateien während des Uploads auf Multimediaplattformen untersuchen werden könnten \citep[][]{Kawa2022}.
+
+Das Modell muss allerdings noch mit anspruchsvolleren Datensätzen wie den ASVspoof Challenge Datensätzen von 2021 und demnächst 2023 validiert werden.
+Bisher lag der Fokus auf der zeitkritischen Analyse während der Einfluss von Störgeräuschen noch nicht untersucht wurde.
