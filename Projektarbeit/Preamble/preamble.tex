@@ -23,6 +23,15 @@
 \usepackage[onehalfspacing]{setspace} %Zeilenabstand 1.5
 \newcommand{\csharp}{{\settoheight{\dimen0}{C}C\kern-.05em \resizebox{!}{\dimen0}{\raisebox{\depth}{\#}}}} %schönes C#
 
+\usepackage{multirow}
+\usepackage{tabularx} %für feste Tabellenbreite und Umbrüche in Spalten
+\usepackage{ragged2e} %"'"'
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+\newcolumntype{J}[1]{>{\justifying\arraybackslash}p{#1}}
+
+
 %Farben für C#
 \definecolor{bluekeywords}{rgb}{0,0,1}
 \definecolor{greencomments}{rgb}{0,0.5,0}
