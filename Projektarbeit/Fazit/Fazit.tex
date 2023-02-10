@@ -1,15 +1,38 @@
 \section{Fazit}
-Anwendung von Audio Deepfake findet (aufgrund der medialen Natur) hauptsächlich in Echtzeit statt (Telefonscam).
-Verbreitung durch soziale Medien auch.
-Dadurch ist das Gefahrenpotential entsprechend groß (wichtigste Punkte anführen).
-Herausforderung, die Erkennung ebenfalls in Echtzeit zu realisieren ist riesengroß (kurz nochmal auf Gründe eingehen).
+Die Verwendung von Deepfakes zur Verbreitung von Falschinformationen ist ein wachsendes Problem im Zeitalter von digitalen Medien und sozialen Netzwerken.
+Es stellt sich die Frage, wie mögliche Bedrohungen effektiv abgewehrt werden können.
+Dazu wurde in dieser Arbeit ein Überblick über die Gefahrenpotentiale von Deepfakes mit besonderer Betrachtung von Audio Deepfakes zusammengestellt, der im Folgenden zusammengefasst dargestellt ist.
 
-Alternative technische aber auch gesellschaftliche Lösungen präsentieren.
-Digitaler Fingerabdruck, Zensierung durch Anbieter von sozialen Medien, etc. mit ganz kurzen pro/con.
-Aufklären! Wie bei sozialen Medien in Grundschule oder so anfangen: nicht alles glauben etc.
+\begin{itemize}
+  \item Hohe Verbreitungsgeschwindigkeit durch soziale Netzwerke\\
+  		$\rightarrow$ Dadurch geringe Reaktionszeit zur Entfernung und Richtigstellung
+  \item Einstiegshürde zur Erzeugung von AD gering\\
+        $\rightarrow$ Open Source Software inklusive Tutorials frei verfügbar
+  \item Wirkung von AD häufig in Echtzeit\\
+        $\rightarrow$ Telefonbetrug
+  \item Gesellschaft ist kaum sensibilisiert in Bezug auf Deepfakes
+\end{itemize}
 
-Das führt zum Abschluss:
+Die wichtigste Erkenntnis ist, dass bei Deepfakes allgemein, aber ganz besonders bei AD die zeitliche Komponente zwischen Verbreitung und Detektion eine entscheidende Rolle spielt.
+Daraus ergibt sich die große Herausforderung, die Detektion von AD in Echtzeit und idealerweise direkt auf dem Anwendergerät leisten zu können.
+Daher wurde im zweiten Teil dieser Arbeit der Stand der Forschung auf dem Gebiet der AD Detektion unter Berücksichtigung dieser Aspekte untersucht.
+Ein Überblick über die aktuellen Herausforderungen ist nachfolgend zusammengefasst.
 
-Wir Leben in „post-truth era“, müssen lernen audio-visuelle Medien kritisch zu betrachten.
-Bisher wurde ein Video/O-Ton als Beweis verwendet: nicht mehr möglich.
-Glaubwürdigkeit leidet, Menschen können schwieriger zwischen Wahrheit und Lüge unterscheiden \citep[][]{Godulla2021}.
+\begin{itemize}
+  \item Proben müssen aufwendig vorprozessiert werden\\
+        $\rightarrow$ Benötigt entweder Zeit (feature-based) oder hohe Rechenressourcen (image-based)
+  \item Störgeräusche verringern die Effektivität der meisten Algorithmen\\
+        $\rightarrow$ Aktuelle Lösungen benötigen hohe Rechenressourcen
+  \item Spezialisierung der Detektionsalgorithmen auf ein bestimmtes Erzeugungsmodell\\
+        $\rightarrow$ In der Praxis eine Detektionsmethode nicht immer ausreichend 
+\end{itemize}
+
+Es gibt aktuell viele Ansätze, die einzelne Teilprobleme angehen und versuchen Lösungen zu finden oder zu optimieren.
+Dabei ist die größte Schwierigkeit, dass die verwendeten Deep Learning Algorithmen einen hohen Ressourcenbedarf haben.
+So konnte nur ein Artikel gefunden werden, indem sich Forscher mit der Entwicklung eines sparsamen Algorithmus beschäftigt haben, um beispielsweise einen Telefonbetrug zu verhindern oder viele Daten beim Upload auf Medienplatformen automatisiert überprüft zu können.
+Allerdings geht der Trend dahin, die Analyse von sogenannten \glqq{}real world samples\grqq{} voranzutreiben.
+Dabei werden Deepfakes untersucht, die mit Störgeräuschen versehene, komprimiert oder mit authentischen Aufnahmen gemischt werden um reale Angriffe zu simulieren.
+
+Die Gefahr von AD kann also bisher nicht mit technischen Mitteln abgewendet werden, die Problematik der Echtzeitanalyse von Realproben rückt aber immer mehr in den Fokus der Wissenschaft.
+Gleichzeitig führt die zunehmende Verbreitung von AD dazu, dass Menschen schwieriger zwischen Wahrheit und Lüge unterscheiden können \citep[][]{Godulla2021}.
+Daher ist eine parallele Sensibilisierung der Gesellschaft in Bezug auf Deepfakes unabdinglich.
