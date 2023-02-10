@@ -2,14 +2,14 @@
 % Hier verfügbare Methoden kategorisieren und allgemein vorstellen.
 % Welche Ansätze gibt es?
 % Welche Voraussetzungen und Anforderungen haben die (Ressourcen, Quelle)?
-In den letzten Jahren ist eine Häufung an Übersichtsartikeln über Detektionsalgorithmen für Audio Deepfakes in der Fachliteratur zu beobachten \citep[][]{Masood2022,Almutairi2022,Khanjani2021}.
+In den letzten Jahren ist eine Häufung an Übersichtsartikeln über Detektionsalgorithmen für AD in der Fachliteratur zu beobachten \citep[][]{Masood2022,Almutairi2022,Khanjani2021}.
 Tatsächlich sind dies die ersten Übersichtsartikel die konkret zu diesem Thema erschienen sind, der älteste wurde 2021 veröffentlicht \citep[][]{Khanjani2021}.
-Das zeigt wie frisch und hochaktuell die wissenschaftliche Auseinandersetzung mit der Thematik Audio Deepfake ist.
+Das zeigt wie frisch und hochaktuell die wissenschaftliche Auseinandersetzung mit der Thematik AD ist.
 Außerdem fällt auf, dass viele unterschiedliche Ansätze von verschiedenen Forschungsgruppen zu finden sind.
 Hier scheint sich eine Community zu formen, die sich einen ersten Überblick über die unterschiedlichen Ausprägungen ihrer Forschung verschaffen will.
 
-Diesen Überblick wollen wir nutzen, um zu untersuchen inwieweit die aktuell erforschten Detektionsalgorithmen bei der zeitkritischen Bekämpfung von Audio Deepfakes unterstützen können.
-Dazu werden zunächst die grundsätzlichen Methoden zur Erzeugung und Detektion von Audio Deepfakes vorgestellt, da diese unweigerlich miteinander verbunden sind.
+Diesen Überblick wollen wir nutzen, um zu untersuchen inwieweit die aktuell erforschten Detektionsalgorithmen bei der zeitkritischen Bekämpfung von AD unterstützen können.
+Dazu werden zunächst die grundsätzlichen Methoden zur Erzeugung und Detektion von AD vorgestellt, da diese unweigerlich miteinander verbunden sind.
 Anschließend werden diese hinsichtlich der Voraussetzungen und Anforderungen an benötigte Ressourcen sowie die Audioquelle selbst analysiert.
 Dabei stellt sich stets die Frage, ob die Technologie bereits jetzt oder eventuell in naher Zukunft prinzipiell einen Telefonbetrug schnell genug aufdecken kann, um diesen verhindern zu können.
 
@@ -41,7 +41,7 @@ Einige Beispiele für derartige Deeplearning Modelle sind WaveNet (2016), Tacotr
 
 Neueste Entwicklungen zeigen, dass dieser Prozess auch in Echtzeit möglich ist, wobei von Voice Cloning gesprochen wird.
 Hierbei liegt der Fokus darauf, bestimmte Stimmfeatures zu erhalten wodurch nicht nur menschenähnliche Stimmen sondern gezielt Personen nachgeahmt werden können.
-Diese Technologie ist frei zugängig, beispielsweise über Anwendungen wie Overdub oder VoiceApp und ermöglicht die Erstellung von Audio Deepfakes \citep[][]{Masood2022}.
+Diese Technologie ist frei zugängig, beispielsweise über Anwendungen wie Overdub oder VoiceApp und ermöglicht die Erstellung von AD \citep[][]{Masood2022}.
 
 \textbf{Voice Conversion (VC)}\\
 Eine andere Möglichkeit künstliche Sprachdateien zu erzeugen ist Voice Conversion.
@@ -52,13 +52,13 @@ Allerdings lassen sich so sehr gute Imitate erzeugen, zum Teil sogar in einer an
 
 Hier werden ähnlich wie bei TTS Vocoder verwendet, aber auch Neuronale Netze und Machine Learning mit speziellen Algorithmen zur Manipulation von multimedialen Inhalten.
 
-Beide Technologien, sowohl TTS als auch VC, eignen sich prinzipiell für die Erzeugung von Audio Deepfakes in Echtzeit beziehungsweise zur Verwendung in oben genannten Szenarien.
+Beide Technologien, sowohl TTS als auch VC, eignen sich prinzipiell für die Erzeugung von AD in Echtzeit beziehungsweise zur Verwendung in oben genannten Szenarien.
 Voraussetzung ist jeweils, dass genug Material der Zielperson vorhanden ist, um die Modelle anzulernen.
 \clearpage
 
 \subsubsection{Audio Deepfake Detection}
-Die zuvor vorgestellten Methoden zur künstlichen Stimmsynthese werden nicht nur für die Verbesserung von Mensch-Computer-Interaktionen verwendet, sondern auch zur Erzeugung von Audio Deep"-fakes mit zum Teil kriminellen Absichten.
-Um dem entgegenzuwirken wird intensiv an Algorithmen zur Erkennung von Audio Deepfakes geforscht.
+Die zuvor vorgestellten Methoden zur künstlichen Stimmsynthese werden nicht nur für die Verbesserung von Mensch-Computer-Interaktionen verwendet, sondern auch zur Erzeugung von AD mit zum Teil kriminellen Absichten.
+Um dem entgegenzuwirken wird intensiv an Algorithmen zur Erkennung von AD geforscht.
 
 Grundsätzlich können die verfügbaren Methoden darin unterschieden werden, ob die zur Identifizierung von synthetischen Audiospuren verwendeten Features manuell oder per Deeplearning spezifiziert werden.
 Andere Quellen sprechen auch von feature-based approach oder image-based approach \citep[][]{Khochare2021}.
@@ -76,7 +76,7 @@ So gibt es einen sehr großen open source Datensatz von Mozilla \citep[][]{Ardil
 Dabei geht der Trend dahin, nicht mehr nur die grundsätzlichen Fähigkeiten von Detektionsalgorithmen zur Überprüfung von (Labor)Proben zu beweisen, sondern es werden vermehrt Audioproben erzeugt und getestet, die einen realen Angriff mit Fake Audio simulieren sollen.
 Der FOR sowie der aktuellste Datensatz der ASVspoof Challenge enthalten Proben, die einen Angriff per Telefon oder Sprachnachricht simulieren sollen \citep[][]{Masood2022}.
 
-Sind die Detektionsalgorithmen einmal angelernt können sie dazu verwendet werden, Audio Proben zu testen um zu entscheiden, ob sie authentisch sind oder synthetisch erzeugt wurden.
+Sind die Detektionsalgorithmen einmal angelernt können sie dazu verwendet werden, Audioproben zu testen um zu entscheiden, ob sie authentisch sind oder synthetisch erzeugt wurden.
 
 Dabei gibt es jedoch einige Einschränkungen, die immer wieder in der Literatur genannt werden.
 Folgende Tabelle gibt einen Überblick über die Herausforderungen, vor allem auch im Hinblick auf die Ausgangsfragestellung.
@@ -122,5 +122,5 @@ Wenn beispielsweise ein Algorithmus robust gegen Störgeräusche ist, dann geht 
 Können TTS Proben gut erkannt werden, dann werden VC Proben nicht erkannt.
 Ist die Genauigkeit der Detektion sehr gut, werden große Mengen an Trainingsdaten benötigt \citep[][]{Masood2022,Almutairi2022}.
 
-Eine allgemeingültige Lösung für die Detektion von Audio Deepfakes in Alltagssituationen, besonders die zeitkritische Analyse von Proben mit Störgeräuschen gibt es bislang nicht.
+Eine allgemeingültige Lösung für die Detektion von AD in Alltagssituationen, besonders die zeitkritische Analyse von Proben mit Störgeräuschen gibt es bislang nicht.
 Allerdings rückt die Analyse von \glqq{}real world samples\grqq{} immer mehr in den Fokus der Wissenschaft und wird auch im Rahmen der ASVspoof Challenges immer wichtiger \citep[][]{Yamagishi2021}.
